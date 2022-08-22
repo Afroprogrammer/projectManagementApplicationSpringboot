@@ -22,9 +22,8 @@ public class HomeController {
     @GetMapping("/")
     public String displayHome(Model model){
         List<Project> projects = projectRepository.findAll();
-        model.addAttribute("projects", projects);
-
         List<Employee> employeeList = employeeRepository.findAll();
+        model.addAttribute("projects", projects);
         model.addAttribute("employee", employeeList);
         return "main/home";
     }
