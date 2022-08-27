@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 public class Employee {
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Id
     private long employeeId;
     private String firstName;
