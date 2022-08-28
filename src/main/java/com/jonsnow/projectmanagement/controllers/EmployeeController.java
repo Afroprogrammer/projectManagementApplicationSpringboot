@@ -1,7 +1,7 @@
-package com.jonsnow.projectmanagementapplicationspringboot.controllers;
+package com.jonsnow.projectmanagement.controllers;
 
-import com.jonsnow.projectmanagementapplicationspringboot.dao.EmployeeRepository;
-import com.jonsnow.projectmanagementapplicationspringboot.entities.Employee;
+import com.jonsnow.projectmanagement.dao.EmployeeRepository;
+import com.jonsnow.projectmanagement.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

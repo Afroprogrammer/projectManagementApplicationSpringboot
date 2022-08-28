@@ -1,11 +1,11 @@
-package com.jonsnow.projectmanagementapplicationspringboot.entities;
+package com.jonsnow.projectmanagement.entities;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Employee {
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.AUTO , generator = "employee_seq")
     @Id
     private long employeeId;
     private String firstName;

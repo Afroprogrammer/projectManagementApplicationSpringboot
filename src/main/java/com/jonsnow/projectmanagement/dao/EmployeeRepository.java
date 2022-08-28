@@ -1,12 +1,13 @@
-package com.jonsnow.projectmanagementapplicationspringboot.dao;
+package com.jonsnow.projectmanagement.dao;
 
-import com.jonsnow.projectmanagementapplicationspringboot.dto.EmployeeProject;
-import com.jonsnow.projectmanagementapplicationspringboot.entities.Employee;
+import com.jonsnow.projectmanagement.dto.EmployeeProject;
+import com.jonsnow.projectmanagement.entities.Employee;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {
      public List<Employee> findAll();
 

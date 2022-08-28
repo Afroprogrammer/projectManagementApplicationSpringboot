@@ -1,20 +1,19 @@
-package com.jonsnow.projectmanagementapplicationspringboot.controllers;
+package com.jonsnow.projectmanagement.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jonsnow.projectmanagementapplicationspringboot.dao.EmployeeRepository;
-import com.jonsnow.projectmanagementapplicationspringboot.dao.ProjectRepository;
-import com.jonsnow.projectmanagementapplicationspringboot.dto.ChartData;
-import com.jonsnow.projectmanagementapplicationspringboot.dto.EmployeeProject;
-import com.jonsnow.projectmanagementapplicationspringboot.entities.Project;
+import com.jonsnow.projectmanagement.dao.EmployeeRepository;
+import com.jonsnow.projectmanagement.dao.ProjectRepository;
+import com.jonsnow.projectmanagement.dto.ChartData;
+import com.jonsnow.projectmanagement.dto.EmployeeProject;
+import com.jonsnow.projectmanagement.entities.Project;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class HomeController {
@@ -24,9 +23,13 @@ public class HomeController {
     @Autowired
     EmployeeRepository employeeRepository;
 
+    @Value("${version}")
+    private String ver;
+
     @GetMapping("/")
     public String displayHome(Model model) throws JsonProcessingException {
-        Map<String ,Object> map = new HashMap<>();
+//        Map<String ,Object> map = new HashMap<>();
+        model.addAttribute("versionNumber", ver);
         List<Project> projects = projectRepository.findAll();
 
         List<ChartData> projectData = projectRepository.getProjectStatus();

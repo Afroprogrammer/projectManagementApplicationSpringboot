@@ -1,4 +1,4 @@
-package com.jonsnow.projectmanagementapplicationspringboot.dto;
+package com.jonsnow.projectmanagement.dto;
 
 public interface EmployeeProject {
     //we need to start the interface to have get

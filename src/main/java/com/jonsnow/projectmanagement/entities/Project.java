@@ -1,4 +1,4 @@
-package com.jonsnow.projectmanagementapplicationspringboot.entities;
+package com.jonsnow.projectmanagement.entities;
 
 import com.sun.istack.NotNull;
 
@@ -9,7 +9,8 @@ import java.util.List;
 @Entity
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.AUTO , generator = "project_seq")
+
     @NotNull
 
     private long projectId;
